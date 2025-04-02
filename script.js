@@ -1,11 +1,18 @@
 document.addEventListener("DOMContentLoaded", function() {
     const bgMusic = document.getElementById("bgMusic");
-    
-    // Attempt to autoplay music
-    bgMusic.volume = 0.5; // Adjust volume
-    bgMusic.play().catch(() => {
-        console.log("Autoplay blocked. Waiting for user interaction.");
-    });
+
+    function playMusic() {
+        bgMusic.volume = 0.5; // Adjust volume
+        bgMusic.play().catch(() => {
+            console.log("Autoplay blocked. Waiting for user interaction...");
+        });
+    }
+
+    // Try to autoplay immediately
+    playMusic();
+
+    // If autoplay fails, wait for user interaction
+    document.body.addEventListener("click", playMusic, { once: true });
 
     setTimeout(() => {
         document.getElementById("intro").style.opacity = "0";
