@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixing the Broken Trust</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+
+    <audio id="background-music" autoplay loop>
+        <source src="aespa.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        <h1>Fixing the Broken Trust</h1>
+        <p>Drag the pieces to the box through cursor to reveal the truth.</p>
+
+        <div class="puzzle-container">
+            <div class="puzzle-grid">
+                <div class="puzzle-slot" id="slot1"></div>
+                <div class="puzzle-slot" id="slot2"></div>
+                <div class="puzzle-slot" id="slot3"></div>
+                <div class="puzzle-slot" id="slot4"></div>
+                <div class="puzzle-slot" id="slot5"></div>
+                <div class="puzzle-slot" id="slot6"></div>
+            </div>
+
+            <div class="puzzle-pieces">
+                <div class="puzzle-piece" draggable="true" id="piece1" data-slot="slot1">K</div>
+                <div class="puzzle-piece" draggable="true" id="piece2" data-slot="slot2">A</div>
+                <div class="puzzle-piece" draggable="true" id="piece3" data-slot="slot3">R</div>
+                <div class="puzzle-piece" draggable="true" id="piece4" data-slot="slot4">I</div>
+                <div class="puzzle-piece" draggable="true" id="piece5" data-slot="slot5">N</div>
+                <div class="puzzle-piece" draggable="true" id="piece6" data-slot="slot6">A</div>
+            </div>
+        </div>
+
+        <p id="completion-message" class="hidden">💖 You Fixed It! ТИ МАЙО СОЛНЫШКО 💖</p>
+
+        <img src="success.gif" alt="Success" id="celebrationGif" class="hidden">
+
+        <a href="promise.html" id="nextBtn" class="next-btn hidden">Next</a>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

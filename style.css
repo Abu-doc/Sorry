@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+
+
+body {
+    background: linear-gradient(135deg, #ffdde1, #faa6c1, #ff85a2, #ff5d94, #ff2e63);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+}
+
+/* Removed the white box */
+.container {
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: none;
+    background: none;
+}
+
+/* Locked message styling */
+.locked-message {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Message styling */
+.message {
+    font-size: 18px;
+    color: navy;
+    margin-top: 10px;
+}
+
+/* Click button */
+.click-button {
+    background-color: #ff4d6d;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.click-button:hover {
+    background-color: #e03e5d;
+}
+
+/* Next button */
+.next-btn {
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.next-btn:hover {
+    background-color: #218838;
+}
+
+/* Hide elements */
+.hidden {
+    display: none;
+}
+
+
+.glitch-gif {
+    margin: 20px auto; /* Centers it perfectly */
+    width: 200px; /* Adjust size as needed */
+}

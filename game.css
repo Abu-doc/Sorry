@@ -1,0 +1,184 @@
+/* Background gradient */
+body {
+    background: linear-gradient(135deg, #ffb6c1, #ff69b4, #ff1493, #db7093, #c71585);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Title */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+/* Instructions */
+p {
+    font-size: 1.2em;
+}
+
+/* Puzzle container */
+.puzzle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Puzzle grid (single row) */
+.puzzle-grid {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Puzzle slots */
+.puzzle-slot {
+    width: 80px;
+    height: 80px;
+    background-color: #ff4d6d;
+    border-radius: 10px;
+}
+
+/* Puzzle pieces */
+.puzzle-pieces {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Cracked Effect on Puzzle Pieces */
+.puzzle-piece {
+    width: 80px;
+    height: 80px;
+    background-color: #ff69b4;
+    color: black;
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: grab;
+    position: relative; /* Needed for crack overlay */
+    transition: 0.2s;
+}
+
+/* Add cracks using an overlay */
+.puzzle-piece::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('cracked.avif'); /* Add a crack image */
+    background-size: cover;
+    opacity: 0.4;
+}
+
+/* Remove Cracks When Fixed */
+.fixed::before {
+    display: none; /* Hides crack overlay when correct */
+}
+
+/* Confetti Effect */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, #ff0, #f06);
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: confetti-fall 3s linear infinite;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+    }
+}
+
+
+.puzzle-piece:active {
+    cursor: grabbing;
+}
+
+/* Hide elements */
+.hidden {
+    display: none;
+}
+
+/* Next button */
+#celebrationGif {
+    width: 200px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.next-btn {
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;  /* Ensures it takes full width and moves below */
+    margin: 20px auto 0; /* Centers it below the GIF */
+    transition: 0.3s;
+    visibility: hidden;
+}
+
+.next-btn:hover {
+    background-color: #218838;
+}
+
+
+/* Falling Hearts Animation */
+@keyframes fall {
+    0% { transform: translateY(-10px) scale(1); opacity: 1; }
+    100% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+}
+
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    color: black;
+    font-size: 25px;
+    opacity: 0.7;
+    animation: fall linear infinite;
+}
+
+#completion-message {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+     /* Hidden initially */
+}
+

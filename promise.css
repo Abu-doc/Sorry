@@ -1,0 +1,139 @@
+/* Cute Background */
+body {
+    background: linear-gradient(135deg, #ffdee9, #b5fffc);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: #ff4d6d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow-y: auto;
+    position: relative;
+}
+
+/* Title */
+h1 {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 10px rgba(255, 0, 150, 0.6);
+}
+
+/* Promises Styling */
+.promises {
+    width: 80%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    overflow-y: scroll;
+    max-height: 400px;
+}
+
+.promises p {
+    font-size: 1.3em;
+    font-weight: bold;
+    animation: glow 2s infinite alternate;
+}
+
+/* Glow Effect */
+@keyframes glow {
+    from { text-shadow: 0px 0px 10px #ff69b4; }
+    to { text-shadow: 0px 0px 20px #ff1493; }
+}
+
+/* Floating Hearts */
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.heart {
+    position: absolute;
+    font-size: 25px;
+    color: #ff1493;
+    opacity: 0.7;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10px) scale(1); opacity: 1; }
+    100% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+}
+
+/* Next Button */
+.next-btn {
+    background-color: #ff4d6d;
+    color: white;
+    font-size: 18px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    margin: 20px auto;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.next-btn:hover {
+    background-color: #ff69b4;
+}
+
+/* Music Toggle Button */
+#musicToggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+/* Sticky Note */
+.sticky-note {
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    width: 120px;
+    height: 120px;
+    background: #ffeb3b;
+    color: #000;
+    font-family: 'Indie Flower', cursive;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 120px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.sticky-note:hover {
+    transform: scale(1.1);
+}
+
+/* Hidden Sorry GIF */
+.sorry-gif {
+    display: none;
+    position: fixed;
+    right: 20px;
+    bottom: 180px;
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+}
+
