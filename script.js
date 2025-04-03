@@ -1,45 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
     const bgMusic = document.getElementById("bgMusic");
-    const musicButton = document.createElement("button");
 
     function playMusic() {
-        bgMusic.volume = 0.5; 
-        bgMusic.play().then(() => {
-            console.log("Music started playing.");
-        }).catch(() => {
-            console.log("Autoplay blocked. Showing play button...");
-            showMusicButton();
+        bgMusic.volume = 0.5;
+        bgMusic.play().catch(() => {
+            console.log("Autoplay blocked. Waiting for user interaction...");
         });
     }
 
-    function showMusicButton() {
-        musicButton.textContent = "Tap to Play Music 🎶";
-        musicButton.style.position = "fixed";
-        musicButton.style.top = "50%";
-        musicButton.style.left = "50%";
-        musicButton.style.transform = "translate(-50%, -50%)";
-        musicButton.style.padding = "12px 24px";
-        musicButton.style.fontSize = "18px";
-        musicButton.style.fontWeight = "bold";
-        musicButton.style.background = "#9c27b0"; 
-        musicButton.style.color = "#fff";
-        musicButton.style.border = "none";
-        musicButton.style.cursor = "pointer";
-        musicButton.style.borderRadius = "10px";
-        musicButton.style.zIndex = "1000";
-        document.body.appendChild(musicButton);
-
-        musicButton.addEventListener("click", function () {
-            bgMusic.play();
-            musicButton.remove();
-        });
-    }
-
-    // Try autoplay
+    // Try autoplay immediately
     playMusic();
 
-    // If user clicks anywhere on the page, try playing again
-    document.body.addEventListener("click", playMusic, { once: true });
+    // If blocked, play on user interaction (any click)
+    document.addEventListener("click", function () {
+        playMusic();
+    }, { once: true });
 
     // Other animations
     setTimeout(() => {
